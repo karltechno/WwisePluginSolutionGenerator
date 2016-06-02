@@ -1,0 +1,26 @@
+// $(PLUGIN_NAME).h
+#pragma once
+
+#include "$(PLUGIN_NAME)FXParams.h"
+#include "$(PLUGIN_NAME)FXDSP.h"
+
+class C$(PLUGIN_NAME)FX
+	: public AK::IAkInPlaceEffectPlugin
+{
+public:
+	C$(PLUGIN_NAME)FX();
+	~C$(PLUGIN_NAME)FX();
+
+	AKRESULT Init( AK::IAkPluginMemAlloc* in_pAllocator, AK::IAkEffectPluginContext* in_pFXCtx, AK::IAkPluginParam* in_pParams, AkAudioFormat& in_rFormat ) override;
+	AKRESULT Term( AK::IAkPluginMemAlloc* in_pAllocator ) override;
+	AKRESULT Reset() override;
+	AKRESULT GetPluginInfo( AkPluginInfo& out_rPluginInfo ) override;
+	AKRESULT TimeSkip( AkUInt32 in_uFrames ) override { return AK_DataReady; }
+		
+	void Execute( AkAudioBuffer* io_pBuffer ) override;
+
+private:
+	C$(PLUGIN_NAME)FXDSP m_FXState;
+	C$(PLUGIN_NAME)FXParams* m_pParams;
+	AK::IAkPluginMemAlloc* m_pAllocator;
+};

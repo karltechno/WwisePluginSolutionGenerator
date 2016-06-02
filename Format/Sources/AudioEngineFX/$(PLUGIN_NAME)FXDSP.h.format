@@ -1,0 +1,22 @@
+// $(PLUGIN_NAME)FXDSP.h
+#pragma once
+
+#include <AK/SoundEngine/Common/AkTypes.h>
+#include <AK/SoundEngine/Common/IAkPluginMemAlloc.h>
+#include <AK/SoundEngine/Common/AkCommonDefs.h>
+#include "$(PLUGIN_NAME)FXParams.h"
+
+class C$(PLUGIN_NAME)FXDSP
+{
+public:
+	C$(PLUGIN_NAME)FXDSP();
+	~C$(PLUGIN_NAME)FXDSP();
+	
+	void Setup( C$(PLUGIN_NAME)FXParams* pInitialParams, bool in_bIsSendMode, AkUInt32 in_uSampleRate );
+	void Process( AkAudioBuffer* io_pBuffer, C$(PLUGIN_NAME)FXParams* pCurrentParams );
+	
+private:
+	C$(PLUGIN_NAME)FXParams m_PreviousParams;
+	AkUInt32 m_uSampleRate;
+	bool m_bSendMode;
+};

@@ -1,0 +1,47 @@
+// $(PLUGIN_NAME)FXParams.h
+#pragma once
+
+#include <AK/SoundEngine/Common/IAkPlugin.h>
+
+// These parameter IDs map to those in the XML property definition
+static const AkPluginParamID $(PLUGIN_NAME_CAPS)FXPARAM_EXAMPLE_A_ID = 0;
+static const AkPluginParamID $(PLUGIN_NAME_CAPS)FXPARAM_EXAMPLE_B_ID = 1;
+static const AkPluginParamID $(PLUGIN_NAME_CAPS)FXPARAM_NUM = 2;
+
+// Default parameter values
+#define $(PLUGIN_NAME_CAPS)FXPARAM_EXAMPLE_A_DEF (0.0f)
+#define $(PLUGIN_NAME_CAPS)FXPARAM_EXAMPLE_B_DEF (false)
+
+struct $(PLUGIN_NAME)RTPCParams
+{
+	AkReal32 fExampleA;
+	bool bHasChanged;
+};
+
+struct $(PLUGIN_NAME)NonRTPCParams
+{
+	bool bExampleB;
+	bool bHasChanged;
+};
+
+struct $(PLUGIN_NAME)FXParams
+{
+	$(PLUGIN_NAME)RTPCParams RTPC;
+	$(PLUGIN_NAME)NonRTPCParams NonRTPC;
+};
+
+class C$(PLUGIN_NAME)FXParams
+	: public AK::IAkPluginParam
+	, public $(PLUGIN_NAME)FXParams
+{
+public:
+	C$(PLUGIN_NAME)FXParams();
+	C$(PLUGIN_NAME)FXParams( const C$(PLUGIN_NAME)FXParams& in_rCopy );
+	~C$(PLUGIN_NAME)FXParams();
+		
+	IAkPluginParam* Clone( AK::IAkPluginMemAlloc* in_pAllocator );
+	AKRESULT Init( AK::IAkPluginMemAlloc* in_pAllocator, const void* in_pParamsBlock, AkUInt32 in_ulBlockSize ) override;
+	AKRESULT Term( AK::IAkPluginMemAlloc* in_pAllocator ) override;
+	AKRESULT SetParamsBlock( const void* in_pParamsBlock, AkUInt32 in_ulBlockSize ) override;
+	AKRESULT SetParam( AkPluginParamID in_ParamID, const void* in_pValue, AkUInt32 in_ulParamSize ) override;
+};

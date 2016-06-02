@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{82a9b4c8-9c63-403e-87f5-f36b9d41f029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources Files">
+      <UniqueIdentifier>{0b04b5ea-ab70-4367-965f-a62911470278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{e3396bd0-ec5e-4bf7-8e98-e2e93116a6d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XML">
+      <UniqueIdentifier>{3b511533-450a-4aee-9f75-bf479006c280}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(PLUGIN_NAME).rc">
+      <Filter>Resources Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(PLUGIN_NAME).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(AUTHORING_PLUGIN_NAME).cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(PLUGIN_NAME).def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(PLUGIN_NAME).h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(AUTHORING_PLUGIN_NAME).h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\$(PLUGIN_NAME).xml">
+      <Filter>XML</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

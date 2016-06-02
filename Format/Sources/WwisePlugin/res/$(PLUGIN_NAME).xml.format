@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PluginModule>
+	<EffectPlugin Name="$(AUTHORING_PLUGIN_NAME)" CompanyID="$(COMPANY_ID)" PluginID="$(EFFECT_ID)" SupportsIsSendModeEffect="true">
+		<PluginInfo>
+			<PlatformSupport>
+				<Platform Name="Windows">
+					<CanBeInsertOnBusses>true</CanBeInsertOnBusses>
+					<CanBeInsertOnAudioObjects>true</CanBeInsertOnAudioObjects>
+					<CanBeRendered>true</CanBeRendered>
+				</Platform>
+				<Platform Name="PS4">
+					<CanBeInsertOnBusses>true</CanBeInsertOnBusses>
+					<CanBeInsertOnAudioObjects>true</CanBeInsertOnAudioObjects>
+					<CanBeRendered>true</CanBeRendered>
+				</Platform>
+				<Platform Name="XboxOne">
+					<CanBeInsertOnBusses>true</CanBeInsertOnBusses>
+					<CanBeInsertOnAudioObjects>true</CanBeInsertOnAudioObjects>
+					<CanBeRendered>true</CanBeRendered>
+				</Platform>
+				<Platform Name="Mac">
+					<CanBeInsertOnBusses>true</CanBeInsertOnBusses>
+					<CanBeInsertOnAudioObjects>true</CanBeInsertOnAudioObjects>
+					<CanBeRendered>true</CanBeRendered>
+				</Platform>
+				<Platform Name="iOS">
+					<CanBeInsertOnBusses>true</CanBeInsertOnBusses>
+					<CanBeInsertOnAudioObjects>true</CanBeInsertOnAudioObjects>
+					<CanBeRendered>true</CanBeRendered>
+				</Platform>
+				<Platform Name="Android">
+					<CanBeInsertOnBusses>true</CanBeInsertOnBusses>
+					<CanBeInsertOnAudioObjects>true</CanBeInsertOnAudioObjects>
+					<CanBeRendered>true</CanBeRendered>
+				</Platform>
+			</PlatformSupport>
+		</PluginInfo>
+		<Properties>
+			<Property Name="ExampleA" Type="Real32" SupportRTPCType="Exclusive">
+				<UserInterface DisplayName="Example A" Step="0.01" Fine="0.001" Decimals="3" />
+				<DefaultValue>0.0</DefaultValue>
+				<AudioEnginePropertyID>0</AudioEnginePropertyID>
+				<Restrictions>
+					<ValueRestriction>
+						<Range Type="Real32">
+							<Min>0</Min>
+							<Max>1</Max>
+						</Range>
+					</ValueRestriction>
+				</Restrictions>
+			</Property>
+			<Property Name="ExampleB" Type="bool">
+				<UserInterface DisplayName="Example B" />
+				<DefaultValue>false</DefaultValue>
+				<AudioEnginePropertyID>1</AudioEnginePropertyID>
+			</Property>
+		</Properties>
+	</EffectPlugin>
+</PluginModule>

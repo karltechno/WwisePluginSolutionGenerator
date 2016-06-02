@@ -1,0 +1,86 @@
+// $(PLUGIN_NAME)FX.cpp
+
+#include "$(PLUGIN_NAME)FX.h"
+#include <AK/SoundEngine/Common/AkTypes.h>
+#include <AK/Tools/Common/AkAssert.h>
+
+AK::IAkPlugin* Create$(PLUGIN_NAME)FX( AK::IAkPluginMemAlloc* in_pAllocator )
+{
+	return AK_PLUGIN_NEW( in_pAllocator, C$(PLUGIN_NAME)FX() );
+}
+
+C$(PLUGIN_NAME)FX::C$(PLUGIN_NAME)FX()
+  : m_pParams( nullptr )
+  , m_pAllocator( nullptr )
+{
+}
+
+C$(PLUGIN_NAME)FX::~C$(PLUGIN_NAME)FX()
+{
+}
+
+AKRESULT C$(PLUGIN_NAME)FX::Init
+(
+	AK::IAkPluginMemAlloc* in_pAllocator,
+	AK::IAkEffectPluginContext* in_pFXCtx,
+	AK::IAkPluginParam* in_pParams,
+	AkAudioFormat& in_rFormat
+)
+{
+	m_pParams = static_cast< C$(PLUGIN_NAME)FXParams* >( in_pParams );
+	m_pAllocator = in_pAllocator;
+	m_FXState.Setup( m_pParams, in_pFXCtx->IsSendModeEffect(), in_rFormat.uSampleRate );
+	m_pParams->NonRTPC.bHasChanged = false;
+	m_pParams->RTPC.bHasChanged = false;
+	AK_PERF_RECORDING_RESET();
+	return AK_Success;
+}
+
+AKRESULT C$(PLUGIN_NAME)FX::Term
+(
+	AK::IAkPluginMemAlloc* in_pAllocator
+)
+{
+	AK_PLUGIN_DELETE( in_pAllocator, this );
+	return AK_Success;
+}
+
+AKRESULT C$(PLUGIN_NAME)FX::Reset
+(
+)
+{
+	return AK_Success;
+}
+
+AKRESULT C$(PLUGIN_NAME)FX::GetPluginInfo
+(
+	AkPluginInfo& out_rPluginInfo
+)
+{
+	out_rPluginInfo.eType = AkPluginTypeEffect;
+	out_rPluginInfo.bIsInPlace = true;
+	out_rPluginInfo.bIsAsynchronous = false;
+	return AK_Success;
+}
+
+void C$(PLUGIN_NAME)FX::Execute
+(
+	AkAudioBuffer* io_pBuffer
+)
+{
+	if ( m_pParams->NonRTPC.bHasChanged )
+	{
+		m_pParams->NonRTPC.bHasChanged = false;
+	}
+	
+	if ( m_pParams->RTPC.bHasChanged )
+	{
+		m_pParams->RTPC.bHasChanged = false;
+	}
+	
+	AK_PERF_RECORDING_START( "$(PLUGIN_NAME)", 25, 30 );
+	
+	m_FXState.Process( io_pBuffer, m_pParams );
+
+	AK_PERF_RECORDING_STOP( "$(PLUGIN_NAME)", 25, 30 );
+}

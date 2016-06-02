@@ -1,0 +1,143 @@
+// $(AUTHORING_PLUGIN_NAME).cpp
+
+#include "stdafx.h"
+#include "resource.h"
+#include "$(AUTHORING_PLUGIN_NAME).h"
+#include <AK/Tools/Common/AkAssert.h>
+
+// Parameter display names
+static LPCWSTR szExampleA = L"ExampleA";
+static LPCWSTR szExampleB = L"ExampleB";
+
+AK_BEGIN_POPULATE_TABLE($(AUTHORING_PLUGIN_NAME)Prop)
+AK_END_POPULATE_TABLE()
+
+const short $(AUTHORING_PLUGIN_NAME)::CompanyID = $(COMPANY_ID);
+const short $(AUTHORING_PLUGIN_NAME)::PluginID = $(EFFECT_ID);
+
+$(AUTHORING_PLUGIN_NAME)::$(AUTHORING_PLUGIN_NAME)
+(
+)
+  : m_pPSet( NULL )
+  , m_hwndPropView( NULL )
+{
+}
+
+$(AUTHORING_PLUGIN_NAME)::~$(AUTHORING_PLUGIN_NAME)
+(
+)
+{
+}
+
+void $(AUTHORING_PLUGIN_NAME)::Destroy
+(
+)
+{
+	delete this;
+}
+
+void $(AUTHORING_PLUGIN_NAME)::SetPluginPropertySet
+(
+	AK::Wwise::IPluginPropertySet* in_pPSet
+)
+{
+	m_pPSet = in_pPSet;
+}
+
+void $(AUTHORING_PLUGIN_NAME)::NotifyPropertyChanged
+(
+	const GUID& in_guidPlatform,
+	LPCWSTR in_szPropertyName
+)
+{
+	if ( !m_hwndPropView )
+		return;
+	
+	// example code
+	
+	if ( !wcscmp( in_szPropertyName, szExampleA ) )
+	{
+		// handle ExampleA property change
+	}
+	else if ( !wcscmp( in_szPropertyName, szExampleB ) )
+	{
+		// handle ExampleB property change
+	}
+}
+
+HINSTANCE $(AUTHORING_PLUGIN_NAME)::GetResourceHandle
+(
+) const
+{
+	AFX_MANAGE_STATE( AfxGetStaticModuleState() );
+	return AfxGetStaticModuleState()->m_hCurrentResourceHandle;
+}
+
+bool $(AUTHORING_PLUGIN_NAME)::GetDialog
+(
+	eDialog in_eDialog,
+	UINT& out_uiDialogID,
+	AK::Wwise::PopulateTableItem*& out_pTable
+) const
+{
+	AKASSERT( in_eDialog == SettingsDialog );
+	out_uiDialogID = IDD_$(PLUGIN_NAME_CAPS)_BIG;
+	out_pTable = $(AUTHORING_PLUGIN_NAME)Prop;
+	return true;
+}
+
+bool $(AUTHORING_PLUGIN_NAME)::WindowProc
+(
+	eDialog in_eDialog,
+	HWND in_hWnd,
+	UINT in_message,
+	WPARAM in_wParam,
+	LPARAM in_lParam,
+	LRESULT& out_lResult
+)
+{
+	switch ( in_message )
+	{
+		case WM_INITDIALOG:
+		{
+			m_hwndPropView = in_hWnd;
+			break;
+		}
+		case WM_DESTROY:
+		{
+			m_hwndPropView = NULL;
+			break;
+		}
+	}
+
+	out_lResult = 0;
+	return false;
+}
+
+bool $(AUTHORING_PLUGIN_NAME)::GetBankParameters
+(
+	const GUID& in_guidPlatform,
+	AK::Wwise::IWriteData* in_pDataWriter
+) const
+{
+	CComVariant varProp;
+	
+	m_pPSet->GetValue( in_guidPlatform, szExampleA, varProp );
+	in_pDataWriter->WriteReal32( varProp.fltVal );
+
+	m_pPSet->GetValue( in_guidPlatform, szExampleB, varProp );
+	in_pDataWriter->WriteBool( varProp.boolVal != 0 );
+	
+	return true;
+}
+
+bool $(AUTHORING_PLUGIN_NAME)::Help
+(
+	HWND in_hWnd,
+	eDialog in_eDialog,
+	LPCWSTR in_szLanguageCode
+) const
+{
+	// todo:
+	return false;
+}
