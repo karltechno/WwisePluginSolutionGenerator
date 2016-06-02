@@ -44,7 +44,7 @@ AK\SoundEngine\Common\AkTypes.h
 ```
 - Sets the location ( relative paths are ok, but see --output_directory above )
 of the Wwise sdk to compile against.
-- By the default we use the $(WWISE_SDK_ROOT) env variable set by the Wwise
+- By the default we use the $(WWISESDK) env variable set by the Wwise
 e.g. "C:\Users\me\Links\Wwise".
 
 ### Format files
