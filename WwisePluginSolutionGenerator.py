@@ -135,6 +135,7 @@ def explain_actions():
     print( '\ncreating wwise plug-in "' + PLUGIN_NAME + '" ( authoring name: "' + AUTHORING_PLUGIN_NAME + '" )' )
     print( 'output: "' + OUTPUT_ROOT_DIRECTORY + '"' )
     print( 'company id: ' + COMPANY_ID + ' effect id: ' + EFFECT_ID )
+    print( 'company name: ' + COMPANY_NAME_CAPS )
     print( 'wwise sdk root: "' + WWISE_SDK_ROOT + '"' )
 #------------------------------------------------------------------------------
 
