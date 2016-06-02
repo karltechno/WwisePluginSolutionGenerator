@@ -32,7 +32,7 @@ AK\SoundEngine\Common\AkTypes.h
 --company_name ( -n )
 ```
 - Used to name a define in all caps like so - AKCOMPANYID_$(COMPANY_NAME_CAPS),
-e.g. AKCOMPANYID_COOLPLUGINS.
+    e.g. AKCOMPANYID_COOLPLUGINS.
 
 ```
 --effect_id ( -e )
@@ -45,7 +45,7 @@ e.g. AKCOMPANYID_COOLPLUGINS.
 - Sets the location ( relative paths are ok, but see --output_directory above )
 of the Wwise sdk to compile against.
 - By the default we use the $(WWISE_SDK_ROOT) env variable set by the Wwise
-- e.g. "C:\Users\me\Links\Wwise".
+e.g. "C:\Users\me\Links\Wwise".
 
 ### Format files
 Format files and the directory structure they live in define how the tool
