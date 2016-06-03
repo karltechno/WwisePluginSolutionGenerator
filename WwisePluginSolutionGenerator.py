@@ -97,7 +97,7 @@ REGEX_WWISE_SDK_ROOT = re.compile( '\$\(WWISE_SDK_ROOT\)' )
 
 #------------------------------------------------------------------------------
 # directories
-FORMAT_DIRECTORY = '.\Format'
+FORMAT_DIRECTORY = os.path.dirname( os.path.realpath( __file__ ) ) + '\Format'
 OUTPUT_ROOT_DIRECTORY = OUTPUT_DIRECTORY + '\\' + PLUGIN_NAME
 SOURCES_DIRECTORY = '\\Sources'
 AUDIO_ENGINE_FX_DIRECTORY = SOURCES_DIRECTORY + '\\AudioEngineFX'
