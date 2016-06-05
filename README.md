@@ -57,5 +57,5 @@ By default the tool generates solutions/projects for Visual Studio 2012.
 It's easy to get visual studio to upgrade the solutions/projects for the version
 you use, just run the solution with a newer version. Compilation for
 console will work as long as your sdk installs have defined
-$(SCE_ORBIS_SDK_DIR) for ps4 and $(Console_SdkIncludeRoot),
+$(SCE_ORBIS_SDK_DIR) for PS4 and $(Console_SdkIncludeRoot),
 $(Console_SdkLibPath) and $(Console_SdkWindowsMetadataPath) for XB1.
