@@ -39,7 +39,7 @@ public:
 	C$(PLUGIN_NAME)FXParams( const C$(PLUGIN_NAME)FXParams& in_rCopy );
 	~C$(PLUGIN_NAME)FXParams();
 		
-	IAkPluginParam* Clone( AK::IAkPluginMemAlloc* in_pAllocator );
+	IAkPluginParam* Clone( AK::IAkPluginMemAlloc* in_pAllocator ) override;
 	AKRESULT Init( AK::IAkPluginMemAlloc* in_pAllocator, const void* in_pParamsBlock, AkUInt32 in_ulBlockSize ) override;
 	AKRESULT Term( AK::IAkPluginMemAlloc* in_pAllocator ) override;
 	AKRESULT SetParamsBlock( const void* in_pParamsBlock, AkUInt32 in_ulBlockSize ) override;
