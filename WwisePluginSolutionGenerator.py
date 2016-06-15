@@ -87,13 +87,14 @@ REGEX_WWISE_SDK_ROOT = re.compile( '\$\(WWISE_SDK_ROOT\)' )
 #           File: $(PLUGIN_NAME).rc
 #           File: $(PLUGIN_NAME)_vc110.vcxproj
 #           File: $(PLUGIN_NAME)_vc110.vcxproj.filters
-#           File: $(PLUGIN_NAME)_vc110.vcxproj.user
 #           File: $(AUTHORING_PLUGIN_NAME).cpp
 #           File: $(AUTHORING_PLUGIN_NAME).h
 #           File: resource.h
 #           File: stdafx.cpp
 #           File: stdafx.h
+#   File: $(PLUGIN_NAME)FXPS4_vc110.sln.format
 #   File: $(PLUGING_NAME)FXWindows_vc110.sln
+#   File: $(PLUGIN_NAME)FXXboxOne_vc110.sln.format
 
 #------------------------------------------------------------------------------
 # directories
