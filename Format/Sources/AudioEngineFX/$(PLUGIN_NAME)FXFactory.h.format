@@ -6,8 +6,8 @@
 const unsigned long AKCOMPANYID_$(COMPANY_NAME_CAPS) = $(COMPANY_ID);
 const unsigned long AKEFFECTID_$(PLUGIN_NAME_CAPS) = $(EFFECT_ID);
 
-AK_FUNC( AK::IAkPluginParam*, Create$(PLUGIN_NAME)FXParams )( AK::IAkPluginMemAlloc* in_pAllocator );
 AK_FUNC( AK::IAkPlugin*, Create$(PLUGIN_NAME)FX )( AK::IAkPluginMemAlloc* in_pAllocator );
+AK_FUNC( AK::IAkPluginParam*, Create$(PLUGIN_NAME)FXParams )( AK::IAkPluginMemAlloc* in_pAllocator );
 
 /*
 Use the following code to register your plug-in
@@ -15,6 +15,6 @@ Use the following code to register your plug-in
 AK::SoundEngine::RegisterPlugin( AkPluginTypeEffect,
 								 AKCOMPANYID_$(COMPANY_NAME_CAPS),
 								 AKEFFECTID_$(PLUGIN_NAME_CAPS),
-								 Create$(PLUGIN_NAME)FXParams,
-								 Create$(PLUGIN_NAME)FX );
+								 Create$(PLUGIN_NAME)FX,
+								 Create$(PLUGIN_NAME)FXParams );
 */
