@@ -90,19 +90,20 @@
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;_DEBUG;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OptimizationLevel>Level3</OptimizationLevel>
+      <OptimizationLevel>Level0</OptimizationLevel>
       <FastMath>true</FastMath>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;_DEBUG;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
-  <Lib>
-    <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
-  </Lib>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
+    </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -116,20 +117,21 @@
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;NDEBUG;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <OptimizationLevel>Level3</OptimizationLevel>
       <FastMath>true</FastMath>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;NDEBUG;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
-  <Lib>
-    <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
-  </Lib>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
+    </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -143,20 +145,21 @@
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;NDEBUG;AK_ENABLE_ASSERTS;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <OptimizationLevel>Level3</OptimizationLevel>
       <FastMath>true</FastMath>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;NDEBUG;AK_ENABLE_ASSERTS;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
-  <Lib>
-    <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
-  </Lib>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
+    </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -170,20 +173,21 @@
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;NDEBUG;AK_OPTIMIZED;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <OptimizationLevel>Level3</OptimizationLevel>
       <FastMath>true</FastMath>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>SN_TARGET_ORBIS;__SCE__;AUDIOKINETIC;NDEBUG;AK_OPTIMIZED;AUDIOKINETIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SCE_ORBIS_SDK_DIR)\target\include;$(SCE_ORBIS_SDK_DIR)\target\include_common;$(SCE_ORBIS_SDK_DIR)\host_tools\lib\clang\3.1\include;.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
-  <Lib>
-    <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
-  </Lib>
+    <Lib>
+      <OutputFile>$(OutDir)lib$(PLUGIN_NAME)FX.a</OutputFile>
+    </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
