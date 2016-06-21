@@ -159,7 +159,7 @@
       <AdditionalIncludeDirectories>.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(PLUGIN_NAME).lib</OutputFile>
+      <OutputFile>$(OutDir)$(PLUGIN_NAME)FX.lib</OutputFile>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -192,7 +192,7 @@
       <AdditionalIncludeDirectories>.;..;$(WWISE_SDK_ROOT)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Lib>
-      <OutputFile>$(OutDir)$(PLUGIN_NAME).lib</OutputFile>
+      <OutputFile>$(OutDir)$(PLUGIN_NAME)FX.lib</OutputFile>
     </Lib>
     <Link>
       <SubSystem>Windows</SubSystem>
