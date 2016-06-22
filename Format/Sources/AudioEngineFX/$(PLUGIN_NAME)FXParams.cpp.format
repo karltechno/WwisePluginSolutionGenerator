@@ -33,7 +33,10 @@ C$(PLUGIN_NAME)FXParams::~C$(PLUGIN_NAME)FXParams
 {
 }
 
-AK::IAkPluginParam* C$(PLUGIN_NAME)FXParams::Clone( AK::IAkPluginMemAlloc* in_pAllocator )
+AK::IAkPluginParam* C$(PLUGIN_NAME)FXParams::Clone
+(
+	AK::IAkPluginMemAlloc* in_pAllocator
+)
 {
 	return AK_PLUGIN_NEW( in_pAllocator, C$(PLUGIN_NAME)FXParams( *this ) );
 }
