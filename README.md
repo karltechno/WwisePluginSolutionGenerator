@@ -44,8 +44,10 @@ AK\SoundEngine\Common\AkTypes.h
 ```
 - Sets the location ( relative paths are ok, but see --output_directory above )
 of the Wwise sdk to compile against.
-- By the default the $(WWISESDK) env variable, which is set by the Wwise
+- By default the $(WWISESDK) env variable, which is set by the Wwise
 installer, is used e.g. C:\Program Files (x86)\Audiokinetic\Wwise v2015.1.3 build 5488\SDK.
+
+![alt text](https://github.com/daniel-murray/WwisePluginSolutionGenerator/blob/master/wwise_sdk_env_var.png "Viewing the Wwise sdk env var using Explorer")
 
 ### Format files
 Format files and the directory structure they live in define how the tool
