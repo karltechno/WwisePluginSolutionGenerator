@@ -13,8 +13,6 @@
 BEGIN_MESSAGE_MAP( C$(PLUGIN_NAME)App, CWinApp )
 END_MESSAGE_MAP()
 
-AK_FUNC( AK::IAkPlugin*, Create$(PLUGIN_NAME)FX )( AK::IAkPluginMemAlloc* in_pAllocator );
-AK_FUNC( AK::IAkPluginParam*, Create$(PLUGIN_NAME)FXParams )( AK::IAkPluginMemAlloc* in_pAllocator );
 
 C$(PLUGIN_NAME)App::C$(PLUGIN_NAME)App
 (
@@ -29,6 +27,7 @@ BOOL C$(PLUGIN_NAME)App::InitInstance
 )
 {
 	CWinApp::InitInstance();
+	AK::Wwise::RegisterWwisePlugin();
 	return TRUE;
 }
 
@@ -38,13 +37,6 @@ AK::Wwise::IPluginBase* __stdcall AkCreatePlugin( unsigned short in_usCompanyID,
 	return new $(AUTHORING_PLUGIN_NAME);
 }
 
-bool __stdcall AkGetSoundEngineCallbacks( unsigned short in_usCompanyID, unsigned short in_usPluginID, AkCreatePluginCallback & out_funcEffect, AkCreateParamCallback & out_funcParam )
-{
-	AKASSERT( in_usCompanyID == $(AUTHORING_PLUGIN_NAME)::CompanyID && in_usPluginID == $(AUTHORING_PLUGIN_NAME)::PluginID );
-
-	out_funcEffect = Create$(PLUGIN_NAME)FX;
-	out_funcParam = Create$(PLUGIN_NAME)FXParams;
-	return true;
-}
 
 DEFINEDUMMYASSERTHOOK;
+DEFINE_PLUGIN_REGISTER_HOOK;

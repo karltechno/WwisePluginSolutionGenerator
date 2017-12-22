@@ -9,6 +9,13 @@ AK::IAkPlugin* Create$(PLUGIN_NAME)FX( AK::IAkPluginMemAlloc* in_pAllocator )
 	return AK_PLUGIN_NEW( in_pAllocator, C$(PLUGIN_NAME)FX() );
 }
 
+AK::IAkPluginParam* Create$(PLUGIN_NAME)FXParams( AK::IAkPluginMemAlloc* in_pAllocator )
+{
+	return AK_PLUGIN_NEW( in_pAllocator, C$(PLUGIN_NAME)FXParams() );
+}
+
+AK_IMPLEMENT_PLUGIN_FACTORY($(PLUGIN_NAME)FX, AkPluginTypeEffect, $(COMPANY_ID), $(EFFECT_ID))
+
 C$(PLUGIN_NAME)FX::C$(PLUGIN_NAME)FX()
   : m_pParams( nullptr )
   , m_pAllocator( nullptr )
@@ -59,7 +66,7 @@ AKRESULT C$(PLUGIN_NAME)FX::GetPluginInfo
 {
 	out_rPluginInfo.eType = AkPluginTypeEffect;
 	out_rPluginInfo.bIsInPlace = true;
-	out_rPluginInfo.bIsAsynchronous = false;
+	out_rPluginInfo.uBuildVersion = AK_WWISESDK_VERSION_COMBINED;
 	return AK_Success;
 }
 

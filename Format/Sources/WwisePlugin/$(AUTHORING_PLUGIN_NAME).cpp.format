@@ -4,6 +4,7 @@
 #include "resource.h"
 #include "$(AUTHORING_PLUGIN_NAME).h"
 #include <AK/Tools/Common/AkAssert.h>
+#include "../AudioEngineFX/$(PLUGIN_NAME)FXFactory.h"
 
 // Parameter display names
 static LPCWSTR szExampleA = L"ExampleA";
