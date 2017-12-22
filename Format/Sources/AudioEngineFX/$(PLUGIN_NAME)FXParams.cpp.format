@@ -5,11 +5,6 @@
 #include <AK/Tools/Common/AkAssert.h>
 #include <AK/Tools/Common/AkBankReadHelpers.h>
 
-AK::IAkPluginParam* Create$(PLUGIN_NAME)FXParams( AK::IAkPluginMemAlloc* in_pAllocator )
-{
-	return AK_PLUGIN_NEW( in_pAllocator, C$(PLUGIN_NAME)FXParams() );
-}
-
 C$(PLUGIN_NAME)FXParams::C$(PLUGIN_NAME)FXParams
 (
 )

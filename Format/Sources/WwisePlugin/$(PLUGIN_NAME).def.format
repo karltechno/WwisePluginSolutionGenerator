@@ -4,4 +4,3 @@ LIBRARY "$(PLUGIN_NAME)"
 
 EXPORTS
 	AkCreatePlugin
-	AkGetSoundEngineCallbacks

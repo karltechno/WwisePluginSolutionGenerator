@@ -1,23 +1,4 @@
-// $(PLUGIN_NAME)FxFactory.h
 #pragma once
-
-#include <AK/SoundEngine/Common/IAkPlugin.h>
-
-#ifndef _AKCOMPANYID_$(COMPANY_NAME_CAPS)
-const unsigned long AKCOMPANYID_$(COMPANY_NAME_CAPS) = $(COMPANY_ID);
-#define _AKCOMPANYID_$(COMPANY_NAME_CAPS)
-#endif // _AKCOMPANYID_$(COMPANY_NAME_CAPS)
-const unsigned long AKEFFECTID_$(PLUGIN_NAME_CAPS) = $(EFFECT_ID);
-
-AK_FUNC( AK::IAkPlugin*, Create$(PLUGIN_NAME)FX )( AK::IAkPluginMemAlloc* in_pAllocator );
-AK_FUNC( AK::IAkPluginParam*, Create$(PLUGIN_NAME)FXParams )( AK::IAkPluginMemAlloc* in_pAllocator );
-
-/*
-Use the following code to register your plug-in
-
-AK::SoundEngine::RegisterPlugin( AkPluginTypeEffect,
-								 AKCOMPANYID_$(COMPANY_NAME_CAPS),
-								 AKEFFECTID_$(PLUGIN_NAME_CAPS),
-								 Create$(PLUGIN_NAME)FX,
-								 Create$(PLUGIN_NAME)FXParams );
-*/
+#if !defined AK_VITA_HW
+AK_STATIC_LINK_PLUGIN($(PLUGIN_NAME)FX)
+#endif
