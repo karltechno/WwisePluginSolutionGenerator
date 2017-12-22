@@ -1,5 +1,7 @@
 ## Wwise Plugin Solution Generator
 
+## This fork contains bring the script up to date with the current Wwise 2017 plugin format.
+
 Supports Windows (x86/x64), XB1 and PS4.
 
 ### Argument Overview
