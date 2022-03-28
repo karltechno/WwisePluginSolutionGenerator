@@ -1,6 +1,0 @@
-; $(PLUGIN_NAME).def
-
-LIBRARY "$(PLUGIN_NAME)"
-
-EXPORTS
-	AkCreatePlugin

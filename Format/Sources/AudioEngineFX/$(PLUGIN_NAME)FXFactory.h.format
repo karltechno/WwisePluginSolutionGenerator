@@ -1,4 +1,0 @@
-#pragma once
-#if !defined AK_VITA_HW
-AK_STATIC_LINK_PLUGIN($(PLUGIN_NAME)FX)
-#endif
